@@ -39,3 +39,12 @@ def change_min_and_max_string(matrix):
 	a = {sum(matrix[i]):i for i in range(len(matrix))}
 	matrix[a[max(a)]], matrix[a[min(a)]] = matrix[a[min(a)]], matrix[a[max(a)]]
 	return matrix
+
+def concetral(matrix):
+	a = np.array([[1, 1, 1, 1, 1, 1, 1], 
+		          [1, 0, 0, 0, 0, 0, 1], 
+		          [1, 0, 1, 1, 1, 0, 1], 
+		          [1, 0, 1, 1, 1, 0, 1], 
+		          [1, 0, 0, 0, 0, 0, 1], 
+		          [1, 1, 1, 1, 1, 1, 1]])
+	return matrix * a
