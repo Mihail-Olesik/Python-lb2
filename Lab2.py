@@ -1,5 +1,6 @@
 import math, sys
 from tasks import *
+import numpy as np
 
 if __name__ == '__main__':
     matrix = get_matrix(sys.argv[1])
@@ -13,3 +14,8 @@ if __name__ == '__main__':
     del first_half
     del second_half
 
+    ascii_matrix = np.array([[ord(j) for j in i] for i in matrix])
+    multiple = np.array([ord(i) for i in first_column_without_lower_letters(matrix)]).reshape(1, 6).dot(ascii_matrix)
+
+    print("Vector multiple: ")
+    print([i for i in multiple])

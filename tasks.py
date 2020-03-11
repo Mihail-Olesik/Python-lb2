@@ -22,3 +22,15 @@ def delete_repeats(matrix, property):
 				if j not in a or j.isalpha():
 					a.append(j)
 	return ''.join(a)
+
+def first_column_without_lower_letters(matrix):
+	size_of_elems = 0
+	for i in range(len(matrix[0])):
+		for elem in matrix[:, i]:
+			if elem.islower() and ord(elem) >= ord('a') and ord(elem) <= ord('z'):
+				break
+			size_of_elems += 1
+		if size_of_elems == len(matrix):
+			return matrix[:, i]
+		size_of_elems = 0
+	return False
