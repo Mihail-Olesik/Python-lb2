@@ -34,3 +34,8 @@ def first_column_without_lower_letters(matrix):
 			return matrix[:, i]
 		size_of_elems = 0
 	return False
+
+def change_min_and_max_string(matrix):
+	a = {sum(matrix[i]):i for i in range(len(matrix))}
+	matrix[a[max(a)]], matrix[a[min(a)]] = matrix[a[min(a)]], matrix[a[max(a)]]
+	return matrix
