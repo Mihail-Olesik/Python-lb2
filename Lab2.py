@@ -24,4 +24,8 @@ if __name__ == '__main__':
 
     print("Change min and max string: ")
     ascii_matrix = change_min_and_max_string(ascii_matrix)
-    print(ascii_matrix)
+    print(ascii_matrix, end='\n\n')
+
+    print("Rotate 180 degrees:")
+    ascii_matrix = np.array([[j for j in i[::-1]] for i in ascii_matrix[::-1]])
+    print(ascii_matrix, end='\n\n')
